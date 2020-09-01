@@ -13,7 +13,7 @@ create table patients (
     lastname varchar(20),
     phone varchar(20)
 );
-
+ 
 create table recipe (
     id  bigint primary key,
     description varchar(20),
