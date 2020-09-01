@@ -1,0 +1,29 @@
+create table doctor (
+    id  bigint primary key,
+    name varchar(20),
+    surname varchar(20),
+    lastname varchar(20),
+    specialization varchar(20)
+);
+
+create table patients (
+    id  bigint primary key,
+    name varchar(20),
+    surname varchar(20),
+    lastname varchar(20),
+    phone varchar(20)
+);
+
+create table recipe (
+    id  bigint primary key,
+    description varchar(20),
+    patient_id bigint,
+    doctor_id bigint,
+    creationDate timestamp,
+    validity timestamp,
+    priority varchar(20)
+);
+
+alter table recipe add FOREIGN KEY (patient_id) REFERENCES patients(id);
+
+alter table recipe add FOREIGN KEY (doctor_id) REFERENCES doctor (id);
